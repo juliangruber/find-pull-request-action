@@ -1,4 +1,4 @@
-name: CI
+name: test
 on:
   schedule:
     - cron:  '*/5 * * * *'
