@@ -1,0 +1,19 @@
+name: Find Pull Request
+author: juliangruber
+description: 'A GitHub Action for finding pull requests'
+branding:
+  icon: 'git-pull-request'
+  color: purple
+inputs:
+  github-token:
+    description: 'GitHub Token'
+    required: true
+  branch:
+    description: 'Branch name'
+    required: true
+outputs:
+  number:
+    description: The Pull Request's number if one was found (e.g. '345' for #345)
+runs:
+  using: 'node12'
+  main: 'index.js'
