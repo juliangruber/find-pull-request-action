@@ -6,7 +6,7 @@ A GitHub Action for finding pull requests.
 
 ```yaml
 steps:
-  - uses: juliangruber/find-pull-request-action@v1
+  - uses: juliangruber/find-pull-request-action@master
     id: find-pull-request
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
