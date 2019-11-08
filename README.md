@@ -14,7 +14,7 @@ steps:
   - run: echo "Your Pull Request has number ${number}"
     if: success() && steps.find-pull-request.outputs.number
     env:
-      PR: ${{ steps.find-pull-request.outputs.number }}
+      number: ${{ steps.find-pull-request.outputs.number }}
 ```
 
 Currently this will find a single open PR based on given `branch` input. For more options please open an issue.
