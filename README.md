@@ -19,6 +19,11 @@ steps:
 
 Currently this will find a single open PR based on given `branch` input. For more options please open an issue.
 
+## Related
+
+- [approve-pull-request-action](https://github.com/juliangruber/approve-pull-request-action) &mdash; Approve a Pull Request
+- [merge-pull-request-action](https://github.com/juliangruber/merge-pull-request-action) &mdash; Merge a Pull Request
+
 ## License
 
 MIT
