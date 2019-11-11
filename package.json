@@ -9,7 +9,7 @@
     "test": "prettier-standard '**/*.js' ** standard",
     "build": "ncc build index.js",
     "release": "np",
-    "version": "npm run build && git add dist"
+    "version": "npm run build && git add dist && git commit -m 'build'"
   },
   "np": {
     "publish": false
