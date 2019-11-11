@@ -8,7 +8,12 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "prettier-standard '**/*.js' ** standard",
-    "build": "ncc build index.js"
+    "build": "ncc build index.js",
+    "release": "np",
+    "version": "npm run build && git add dist"
+  },
+  "np": {
+    "publish": false
   },
   "dependencies": {
     "@actions/core": "^1.2.0",
@@ -16,6 +21,7 @@
   },
   "devDependencies": {
     "@zeit/ncc": "^0.20.5",
+    "np": "^5.1.3",
     "prettier-standard": "^15.0.1",
     "standard": "^14.3.1"
   }
