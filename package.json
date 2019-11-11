@@ -7,8 +7,7 @@
   "repository": "juliangruber/find-pull-request-action",
   "scripts": {
     "test": "prettier-standard '**/*.js' ** standard",
-    "build": "ncc build index.js",
-    "release": "npm run build && git add dist && git commit -m 'build'; np"
+    "release": "ncc build index.js && git add dist && git commit -m 'build'; np"
   },
   "np": {
     "publish": false
