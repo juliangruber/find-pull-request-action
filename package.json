@@ -1,7 +1,7 @@
 {
   "name": "find-pull-request-action",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "description": "GitHub Action for finding pull requests",
   "repository": "juliangruber/find-pull-request-action",
