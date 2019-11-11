@@ -4,7 +4,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: .
+      - name: Find Pull Request
+        uses: ./
         id: find-pull-request
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
