@@ -8,8 +8,7 @@
   "scripts": {
     "test": "prettier-standard '**/*.js' ** standard",
     "build": "ncc build index.js",
-    "release": "np",
-    "version": "npm run build && git add dist && git commit -m 'build'"
+    "release": "npm run build && git add dist && git commit -m 'build' && np"
   },
   "np": {
     "publish": false
