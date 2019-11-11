@@ -5,7 +5,6 @@
   "license": "MIT",
   "description": "GitHub Action for finding pull requests",
   "repository": "juliangruber/find-pull-request-action",
-  "main": "dist/index.js",
   "scripts": {
     "test": "prettier-standard '**/*.js' ** standard",
     "build": "ncc build index.js",
