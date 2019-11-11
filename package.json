@@ -6,7 +6,7 @@
   "description": "GitHub Action for finding pull requests",
   "repository": "juliangruber/find-pull-request-action",
   "scripts": {
-    "test": "prettier-standard '**/*.js' ** standard",
+    "test": "prettier-standard index.js && standard index.js",
     "release": "ncc build index.js && git add dist && git commit -m 'build'; np"
   },
   "np": {
