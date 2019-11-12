@@ -24,6 +24,7 @@ Currently this will find a single open PR based on given `branch` input. For mor
 
 - [approve-pull-request-action](https://github.com/juliangruber/approve-pull-request-action) &mdash; Approve a Pull Request
 - [merge-pull-request-action](https://github.com/juliangruber/merge-pull-request-action) &mdash; Merge a Pull Request
+- [octokit-action](https://github.com/juliangruber/merge-pull-request-action) &mdash; Generic Octokit.js Action
 
 ## License
 
