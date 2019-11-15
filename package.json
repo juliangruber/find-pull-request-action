@@ -9,7 +9,8 @@
     "test": "prettier-standard index.js && standard index.js",
     "build": "ncc build index.js",
     "version": "npm run build && git add dist",
-    "release": "np"
+    "release": "np && npm run release-branch",
+    "release-branch": "git checkout releases/v1 && git merge -s ours master && git push -u origin releases/v1 && git checkout master"
   },
   "np": {
     "publish": false
