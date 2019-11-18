@@ -9,7 +9,7 @@ jobs:
       - name: npm install and build
         run: |
           npm ci
-          npm run uild
+          npm run build
       - name: Find Pull Request
         uses: ./
         id: find-pull-request
