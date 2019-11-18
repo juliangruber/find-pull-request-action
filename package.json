@@ -9,7 +9,7 @@
     "test": "prettier-standard index.js && standard index.js",
     "build": "ncc build index.js",
     "version": "npm run build && git add dist",
-    "release": "np"
+    "release": "np && git tag -f v1 && git push --tags -f"
   },
   "np": {
     "publish": false
