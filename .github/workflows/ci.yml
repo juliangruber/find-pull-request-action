@@ -6,12 +6,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
+      - name: npm install and build
+        run: |
+          npm ci
+          npm run build
       - name: Find Pull Request
         uses: ./
         id: find-pull-request
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           branch: test
-      - run: echo "Your Pull Request has number ${number}"
+      - run: echo "Pull Request ${number} (${sha})"
         env:
           number: ${{ steps.find-pull-request.outputs.number }}
+          sha: ${{ steps.find-pull-request.outputs.head-sha }}
