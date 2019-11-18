@@ -18,6 +18,7 @@ const main = async () => {
   const pr = res.data.length && res.data[0]
 
   core.setOutput('number', pr ? pr.number : '')
+  core.setOutput('head-sha', pr ? pr.head.sha : '')
 }
 
 main().catch(err => core.setFailed(err.message))
