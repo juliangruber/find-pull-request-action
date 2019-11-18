@@ -12,7 +12,7 @@ steps:
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
       branch: my-branch-name
-  - run: echo "Pull Request #${number} (${sha})"
+  - run: echo "Pull Request \#${number} (${sha})"
     env:
       number: ${{ steps.find-pull-request.outputs.number }}
       sha: ${{ steps.find-pull-request.outputs.head-sha }}
