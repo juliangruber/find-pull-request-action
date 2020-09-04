@@ -1,1 +1,7 @@
+# JavaScript
 node_modules
+
+# JetBrains IDE
+.idea/
+*.iml
+*.iws
