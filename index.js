@@ -13,7 +13,7 @@ const main = async () => {
     state: 'open'
   }
   if (branch) {
-    query.head = `${context.repo.owner}:${branch}`
+    query.head = branch.indexOf(':') === -1 ? `${context.repo.owner}:${branch}` : branch
   }
   if (base) {
     query.base = base
