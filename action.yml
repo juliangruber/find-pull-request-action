@@ -10,7 +10,7 @@ inputs:
     required: true
   branch:
     description: 'Branch name'
-    required: true
+    required: false
   base:
     description: 'The base branch name of the Pull Request'
     required: false
