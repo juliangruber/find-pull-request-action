@@ -2020,17 +2020,22 @@ const { GitHub, context } = __webpack_require__(469)
 const main = async () => {
   const token = core.getInput('github-token')
   const branch = core.getInput('branch')
-  const base = core.getInput('base', { required: false })
+  const base = core.getInput('base')
+
+  const query = {
+    ...context.repo,
+    state: 'open'
+  }
+  if (branch) {
+    query.head = `${context.repo.owner}:${branch}`
+  }
+  if (base) {
+    query.base = base
+  }
 
   const octokit = new GitHub(token)
 
-  const res = await octokit.pulls.list({
-    ...context.repo,
-    state: 'open',
-    head: `${context.repo.owner}:${branch}`,
-    base
-  })
-
+  const res = await octokit.pulls.list(query)
   const pr = res.data.length && res.data[0]
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
