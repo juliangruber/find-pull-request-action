@@ -7,7 +7,7 @@ const main = async () => {
   const token = core.getInput('github-token')
   const branch = core.getInput('branch')
   const base = core.getInput('base')
-  
+
   const query = {
     ...context.repo,
     state: 'open'
