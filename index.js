@@ -25,7 +25,7 @@ const main = async () => {
 
   const res = await octokit.pulls.list(query)
   const pr = author ?
-    res.data.length && res.data[0].user.login === author && res.data[0] :
+    res.data.length && res.data.filter(pr => pr.user.login === author)[0] :
     res.data.length && res.data[0]
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
