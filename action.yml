@@ -16,6 +16,9 @@ inputs:
   base:
     description: 'The base branch name of the Pull Request'
     required: false
+  author: 
+    description: 'The author of the Pull Request'
+    required: false
 outputs:
   number:
     description: The Pull Request's number if one was found (e.g. '345' for #345)
