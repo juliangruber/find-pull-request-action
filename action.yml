@@ -7,7 +7,8 @@ branding:
 inputs:
   github-token:
     description: 'GitHub Token'
-    required: true
+    required: false
+    default: ${{ github.token }}
   branch:
     description: |
       The name of the branch from which the pull request was opened. For cross-repository pull requests namespace the
@@ -16,9 +17,23 @@ inputs:
   base:
     description: 'The base branch name of the Pull Request'
     required: false
-  author: 
+  author:
     description: 'The author of the Pull Request'
     required: false
+  state:
+    description: 'The state of the Pull Request. Can be either `open`, `closed` or `all`.'
+    required: false
+    default: open
+  sort:
+    description: |
+      What to sort results by. Can be either `created`, `updated`, `popularity`
+      (comment count) or `long-running` (age, filtering by pulls updated in the last month).
+    required: false
+  direction:
+    description: 'The direction of the sort. Can be either `asc` or `desc`.'
+    default: 'desc'
+    required: false
+
 outputs:
   number:
     description: The Pull Request's number if one was found (e.g. '345' for #345)

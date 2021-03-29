@@ -10,7 +10,6 @@ steps:
     uses: juliangruber/find-pull-request-action@v1
     id: find-pull-request
     with:
-      github-token: ${{ secrets.GITHUB_TOKEN }}
       branch: my-branch-name
   - run: echo "Pull Request ${number} (${sha})"
     env:
