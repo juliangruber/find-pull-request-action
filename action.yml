@@ -17,9 +17,23 @@ inputs:
   base:
     description: 'The base branch name of the Pull Request'
     required: false
-  author: 
+  author:
     description: 'The author of the Pull Request'
     required: false
+  state:
+    description: 'The state of the Pull Request'
+    required: false
+    default: open
+  sort:
+    description: |
+      What to sort results by. Can be either `created`, `updated`, `popularity`
+      (comment count) or `long-running` (age, filtering by pulls updated in the last month).
+    required: false
+  direction:
+    description: |
+      The direction of the sort. Can be either `asc` or `desc`. Default: `desc` when sort is created or sort is not specified, otherwise `asc`.
+    required: false
+
 outputs:
   number:
     description: The Pull Request's number if one was found (e.g. '345' for #345)
