@@ -14,7 +14,7 @@ const main = async () => {
 
   const query = {
     ...context.repo,
-    state: state
+    state
   }
   if (branch) {
     query.head =
