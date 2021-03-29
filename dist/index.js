@@ -2084,10 +2084,13 @@ const main = async () => {
   const branch = core.getInput('branch')
   const base = core.getInput('base')
   const author = core.getInput('author')
+  const state = core.getInput('state')
+  const sort = core.getInput('sort')
+  const direction = core.getInput('direction')
 
   const query = {
     ...context.repo,
-    state: 'open'
+    state
   }
   if (branch) {
     query.head =
@@ -2095,6 +2098,12 @@ const main = async () => {
   }
   if (base) {
     query.base = base
+  }
+  if (sort) {
+    query.sort = sort
+  }
+  if (direction) {
+    query.direction = direction
   }
 
   const octokit = new GitHub(token)
