@@ -21,7 +21,7 @@ inputs:
     description: 'The author of the Pull Request'
     required: false
   state:
-    description: 'The state of the Pull Request'
+    description: 'The state of the Pull Request. Can be `open`, `closed`, and `all`.'
     required: false
     default: open
   sort:
