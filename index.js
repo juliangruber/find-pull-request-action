@@ -11,6 +11,7 @@ const main = async () => {
   const state = core.getInput('state')
   const sort = core.getInput('sort')
   const direction = core.getInput('direction')
+  const fail = core.getInput('ci-fail-if-not-found')
 
   const query = {
     ...context.repo,
@@ -40,6 +41,11 @@ const main = async () => {
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
   core.setOutput('number', pr ? pr.number : '')
   core.setOutput('head-sha', pr ? pr.head.sha : '')
+
+  if(!pr && fail) {
+    core.setOutput('pr-hit', false)
+    throw new Error('No pull request found!')
+  } else core.setOutput('pr-hit', true)
 }
 
 main().catch(err => core.setFailed(err.message))

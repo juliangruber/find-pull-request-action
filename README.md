@@ -12,6 +12,7 @@ steps:
     with:
       branch: my-branch-name
   - run: echo "Pull Request ${number} (${sha})"
+    if: ${{ steps.find-pull-request.outputs.pr-hit == 'true' }}
     env:
       number: ${{ steps.find-pull-request.outputs.number }}
       sha: ${{ steps.find-pull-request.outputs.head-sha }}

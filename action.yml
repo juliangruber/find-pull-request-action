@@ -11,8 +11,9 @@ inputs:
     default: ${{ github.token }}
   branch:
     description: |
-      The name of the branch from which the pull request was opened. For cross-repository pull requests namespace the
-      branch with user or organization name, i.e. 'user:branch-name' or 'org:branch-name'.
+      The name of the branch from which the pull request was opened.
+      For cross-repository pull requests namespace the branch with user or organization name,
+      i.e. 'user:branch-name' or 'org:branch-name'.
     required: false
   base:
     description: 'The base branch name of the Pull Request'
@@ -33,12 +34,18 @@ inputs:
     description: 'The direction of the sort. Can be either `asc` or `desc`.'
     default: 'desc'
     required: false
+  ci-fail-if-not-found:
+    description: 'Whether ci should fail or not if no pull request found.'
+    required: false
+    default: false
 
 outputs:
   number:
-    description: The Pull Request's number if one was found (e.g. '345' for #345)
+    description: The Pull Request's number if one was found (e.g. '345' for `#345`)
   head-sha:
     description: The Pull Request's head sha if one was found
+  pr-hit:
+    description: A boolean value to indicate an exact pull request was found for the input options.
 runs:
   using: 'node12'
   main: 'dist/index.js'
