@@ -36,6 +36,9 @@ inputs:
     description: 'The direction of the sort. Can be either `asc` or `desc`.'
     default: 'desc'
     required: false
+  title:
+    description: 'Title of the Pull Request to search for.'
+    required: false
 
 outputs:
   number:
