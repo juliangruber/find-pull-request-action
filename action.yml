@@ -24,6 +24,9 @@ inputs:
     description: 'The state of the Pull Request. Can be either `open`, `closed` or `all`.'
     required: false
     default: open
+  repo:
+    description: 'Pull Request repo in owner/repo format'
+    required: false
   sort:
     description: |
       What to sort results by. Can be either `created`, `updated`, `popularity`

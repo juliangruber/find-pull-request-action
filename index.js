@@ -11,9 +11,18 @@ const main = async () => {
   const state = core.getInput('state')
   const sort = core.getInput('sort')
   const direction = core.getInput('direction')
+  const repoString = core.getInput('repo')
+
+  let repoObject
+  if (repoString) {
+    const [owner, repo] = repoString.split('/')
+    repoObject = { owner, repo }
+  } else {
+    repoObject = context.repo
+  }
 
   const query = {
-    ...context.repo,
+    ...repoObject,
     state
   }
   if (branch) {
