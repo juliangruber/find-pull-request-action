@@ -40,8 +40,21 @@ inputs:
 outputs:
   number:
     description: The Pull Request's number if one was found (e.g. '345' for #345)
+  title:
+    description: The Pull Request's title if one was found
+  url:
+    description: The Pull Request's URL if one was found
+  head-ref:
+    description: The Pull Request's head ref (branch name) if one was found
   head-sha:
     description: The Pull Request's head sha if one was found
+  base-ref:
+    description: The Pull Request's base ref (branch name) if one was found
+  base-sha:
+    description: The Pull Request's base sha if one was found
+  base-repo:
+    description: The Pull Request's base repository full name (e.g. octocat/Hello-World)
+
 runs:
   using: 'node12'
   main: 'dist/index.js'

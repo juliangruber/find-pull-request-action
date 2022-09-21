@@ -48,7 +48,13 @@ const main = async () => {
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
   core.setOutput('number', pr ? pr.number : '')
+  core.setOutput('title', pr ? pr.title : '')
+  core.setOutput('url', pr ? pr.url : '')
+  core.setOutput('head-ref', pr ? pr.head.ref : '')
   core.setOutput('head-sha', pr ? pr.head.sha : '')
+  core.setOutput('base-ref', pr ? pr.base.ref : '')
+  core.setOutput('base-sha', pr ? pr.base.sha : '')
+  core.setOutput('base-repo', pr ? pr.base.repo.full_name : '')
 }
 
 main().catch(err => core.setFailed(err.message))
