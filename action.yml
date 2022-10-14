@@ -56,5 +56,5 @@ outputs:
     description: The Pull Request's base repository full name (e.g. octocat/Hello-World)
 
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
