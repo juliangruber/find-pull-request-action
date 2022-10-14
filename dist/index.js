@@ -9688,7 +9688,7 @@ var __webpack_exports__ = {};
 
 
 const core = __nccwpck_require__(2186)
-const { GitHub, context } = __nccwpck_require__(5438)
+const github = __nccwpck_require__(5438)
 
 const main = async () => {
   const token = core.getInput('github-token')
@@ -9705,7 +9705,7 @@ const main = async () => {
     const [owner, repo] = repoString.split('/')
     repoObject = { owner, repo }
   } else {
-    repoObject = context.repo
+    repoObject = github.context.repo
   }
 
   const query = {
@@ -9714,7 +9714,9 @@ const main = async () => {
   }
   if (branch) {
     query.head =
-      branch.indexOf(':') === -1 ? `${context.repo.owner}:${branch}` : branch
+      branch.indexOf(':') === -1
+        ? `${github.context.repo.owner}:${branch}`
+        : branch
   }
   if (base) {
     query.base = base
@@ -9726,9 +9728,9 @@ const main = async () => {
     query.direction = direction
   }
 
-  const octokit = new GitHub(token)
+  const octokit = github.getOctokit(token)
 
-  const res = await octokit.pulls.list(query)
+  const res = await octokit.rest.pulls.list(query)
   const pr = author
     ? res.data.length && res.data.filter(pr => pr.user.login === author)[0]
     : res.data.length && res.data[0]
