@@ -27,7 +27,9 @@ const main = async () => {
   }
   if (branch) {
     query.head =
-      branch.indexOf(':') === -1 ? `${github.context.repo.owner}:${branch}` : branch
+      branch.indexOf(':') === -1
+        ? `${github.context.repo.owner}:${branch}`
+        : branch
   }
   if (base) {
     query.base = base
