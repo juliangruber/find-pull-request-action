@@ -41,7 +41,7 @@ const main = async () => {
 
   const octokit = github.getOctokit(token)
 
-  const res = await octokit.pulls.list(query)
+  const res = await octokit.rest.pulls.list(query)
   const pr = author
     ? res.data.length && res.data.filter(pr => pr.user.login === author)[0]
     : res.data.length && res.data[0]
