@@ -54,6 +54,8 @@ outputs:
     description: The Pull Request's base sha if one was found
   base-repo:
     description: The Pull Request's base repository full name (e.g. octocat/Hello-World)
+  state:
+    description: The Pull Request's open or closed state if one was found
 
 runs:
   using: 'node16'
