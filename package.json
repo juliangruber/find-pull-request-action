@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@vercel/ncc": "^0.34.0",
-    "np": "^7.6.2",
+    "np": "^8.0.4",
     "prettier-standard": "^16.4.1",
     "standard": "^17.0.0"
   }
