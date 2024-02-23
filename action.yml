@@ -58,5 +58,5 @@ outputs:
     description: The Pull Request's open or closed state if one was found
 
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
