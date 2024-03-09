@@ -11,6 +11,7 @@ const main = async () => {
   const state = core.getInput('state')
   const sort = core.getInput('sort')
   const direction = core.getInput('direction')
+  const title = core.getInput('title')
   const repoString = core.getInput('repo')
 
   let repoObject
@@ -44,9 +45,13 @@ const main = async () => {
   const octokit = github.getOctokit(token)
 
   const res = await octokit.rest.pulls.list(query)
-  const pr = author
-    ? res.data.length && res.data.filter(pr => pr.user.login === author)[0]
-    : res.data.length && res.data[0]
+  const pr =
+    res.data.length &&
+    res.data.filter(
+      pr =>
+        (!author || pr.user.login === author) &&
+        (!title || pr.title.match(new RegExp(title)))
+    )[0]
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
   core.setOutput('number', pr ? pr.number : '')
