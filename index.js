@@ -47,15 +47,19 @@ const main = async () => {
   const res = await octokit.rest.pulls.list(query)
   let prs = res.data
   if (author) {
+    const length_before = prs.length
     prs = prs.filter(pr => pr.user.login === author)
+    core.debug(`${length_before - prs.length} PRs filtered by author (${author})`)
   }
   if (labels)
   {
+    const length_before = prs.length
     const label_list = labels.split(',')
     prs = prs.filter(pr => {
       const prLabels = pr.labels.map(label => label.name)
       return label_list.every(label => prLabels.includes(label))
     })
+    core.debug(`${length_before - prs.length} PRs filtered by labels (${labels})`)
   }
 
   const pr = res.data.length && res.data[0]
