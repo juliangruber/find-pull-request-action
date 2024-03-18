@@ -12,6 +12,7 @@ const main = async () => {
   const sort = core.getInput('sort')
   const direction = core.getInput('direction')
   const repoString = core.getInput('repo')
+  const labels = core.getInput('labels')
 
   let repoObject
   if (repoString) {
@@ -44,9 +45,19 @@ const main = async () => {
   const octokit = github.getOctokit(token)
 
   const res = await octokit.rest.pulls.list(query)
-  const pr = author
-    ? res.data.length && res.data.filter(pr => pr.user.login === author)[0]
-    : res.data.length && res.data[0]
+  const prs = res.data
+  if (author) {
+    prs = prs.filter(pr => pr.user.login === author)
+  }
+  if (labels)
+  {
+    prs = prs.filter(pr => {
+      const prLabels = pr.labels.map(label => label.name)
+      return labels.every(label => prLabels.includes(label))
+    })
+  }
+
+  const pr = res.data.length && res.data[0]
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
   core.setOutput('number', pr ? pr.number : '')
