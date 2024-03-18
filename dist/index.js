@@ -30862,7 +30862,7 @@ const main = async () => {
 
   const res = await octokit.rest.pulls.list(query)
   let prs = res.data
-  core.debug(`pr before filtering: ${JSON.stringify(pr, null, 2)}`)
+  core.debug(`pr before filtering: ${JSON.stringify(prs, null, 2)}`)
   if (author) {
     const lengthBefore = prs.length
     prs = prs.filter(pr => pr.user.login === author)
