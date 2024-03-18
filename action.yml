@@ -37,8 +37,8 @@ inputs:
     default: 'desc'
     required: false
   labels:
-    description: 'A list of label names, all of which must be present for the PR to be returned'
-    default: []
+    description: 'A comma-seperated list of label names, all of which must be present for the PR to be returned'
+    default: ''
     required: false
 
 outputs:

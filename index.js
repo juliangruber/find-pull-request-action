@@ -51,9 +51,10 @@ const main = async () => {
   }
   if (labels)
   {
+    const label_list = labels.split(',')
     prs = prs.filter(pr => {
       const prLabels = pr.labels.map(label => label.name)
-      return labels.every(label => prLabels.includes(label))
+      return label_list.every(label => prLabels.includes(label))
     })
   }
 
