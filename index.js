@@ -63,7 +63,7 @@ const main = async () => {
     core.debug(`${lengthBefore - prs.length} PRs filtered by labels (${labels})`)
   }
 
-  const pr = res.data.length && res.data[0]
+  const pr = prs.length && prs[0]
 
   core.debug(`pr: ${JSON.stringify(pr, null, 2)}`)
   core.setOutput('number', pr ? pr.number : '')
