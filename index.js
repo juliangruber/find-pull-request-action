@@ -49,17 +49,20 @@ const main = async () => {
   if (author) {
     const lengthBefore = prs.length
     prs = prs.filter(pr => pr.user.login === author)
-    core.debug(`${lengthBefore - prs.length} PRs filtered by author (${author})`)
+    core.debug(
+      `${lengthBefore - prs.length} PRs filtered by author (${author})`
+    )
   }
-  if (labels)
-  {
+  if (labels) {
     const lengthBefore = prs.length
     const labelList = labels.split(',')
     prs = prs.filter(pr => {
       const prLabels = pr.labels.map(label => label.name)
       return labelList.every(label => prLabels.includes(label))
     })
-    core.debug(`${lengthBefore - prs.length} PRs filtered by labels (${labels})`)
+    core.debug(
+      `${lengthBefore - prs.length} PRs filtered by labels (${labels})`
+    )
   }
 
   const pr = prs.length && prs[0]
