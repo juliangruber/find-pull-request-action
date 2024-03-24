@@ -27,7 +27,7 @@ Query pull requests based on these inputs:
 - `direction`
 - `labels`
 
-The first matching pull request will be returned. See [action.yml](blob/master/action.yml) for more details.
+The first matching pull request will be returned. See [action.yml](action.yml) for more details.
 
 ## Related
 
