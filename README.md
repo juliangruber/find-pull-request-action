@@ -27,7 +27,18 @@ Query pull requests based on these inputs:
 - `direction`
 - `labels`
 
-The first matching pull request will be returned. See [action.yml](action.yml) for more details.
+For the first matching pull request, these outputs will be set:
+- `number`
+- `title`
+- `url`
+- `head-ref`
+- `head-sha`
+- `base-ref`
+- `base-sha`
+- `base-repo`
+- `state`
+
+See [action.yml](action.yml) for more details.
 
 ## Related
 
