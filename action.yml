@@ -36,6 +36,9 @@ inputs:
     description: 'The direction of the sort. Can be either `asc` or `desc`.'
     default: 'desc'
     required: false
+  labels:
+    description: 'A comma-seperated list of label names, all of which must be present for the PR to be returned'
+    required: false
 
 outputs:
   number:
