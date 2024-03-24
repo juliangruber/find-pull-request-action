@@ -50,10 +50,10 @@ const main = async () => {
     prs = prs.filter(pr => pr.user.login === author)
   }
   if (labels) {
-    const labelList = labels.split(',')
+    const labelNames = labels.split(',')
     prs = prs.filter(pr => {
       const prLabels = pr.labels.map(label => label.name)
-      return labelList.every(label => prLabels.includes(label))
+      return labelNames.every(label => prLabels.includes(label))
     })
   }
 
