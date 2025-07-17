@@ -7,7 +7,7 @@ A GitHub Action for finding pull requests.
 ```yaml
 steps:
   - name: Find Pull Request
-    uses: juliangruber/find-pull-request-action@v1
+    uses: juliangruber/find-pull-request-action@v1.9.1
     id: find-pull-request
     with:
       branch: my-branch-name
@@ -37,6 +37,7 @@ For the first matching pull request, these outputs will be set:
 - `base-sha`
 - `base-repo`
 - `state`
+- `author`
 
 See [action.yml](action.yml) for more details.
 
