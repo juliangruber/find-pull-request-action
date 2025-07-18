@@ -7,7 +7,7 @@ A GitHub Action for finding pull requests.
 ```yaml
 steps:
   - name: Find Pull Request
-    uses: juliangruber/find-pull-request-action@v1.9.1
+    uses: juliangruber/find-pull-request-action@v1
     id: find-pull-request
     with:
       branch: my-branch-name
