@@ -69,6 +69,7 @@ const main = async () => {
   core.setOutput('base-sha', pr ? pr.base.sha : '')
   core.setOutput('base-repo', pr ? pr.base.repo.full_name : '')
   core.setOutput('state', pr ? pr.state : '')
+  core.setOutput('author', pr ? pr.user?.login : '')
 }
 
 main().catch(err => core.setFailed(err.message))

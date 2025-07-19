@@ -37,6 +37,7 @@ For the first matching pull request, these outputs will be set:
 - `base-sha`
 - `base-repo`
 - `state`
+- `author`
 
 See [action.yml](action.yml) for more details.
 
