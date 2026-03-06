@@ -42,7 +42,7 @@ For the first matching pull request, these outputs will be set:
 - `state`
 - `author`
 
-Additional outputs:
+Meta outputs:
 - `matching-pr-count` - the number of matching pull requests
 - `matching-pr-numbers` - the numbers of matching pull requests, JSON representation of `number[]`
 
