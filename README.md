@@ -44,7 +44,7 @@ For the first matching pull request, these outputs will be set:
 
 Meta outputs:
 - `matching-pr-count` - the number of matching pull requests
-- `matching-pr-numbers` - the numbers of matching pull requests, JSON representation of `number[]`
+- `matching-pr-numbers` - JSON array of matching pull request numbers
 
 See [action.yml](action.yml) for more details.
 
