@@ -17,6 +17,9 @@ steps:
       sha: ${{ steps.find-pull-request.outputs.head-sha }}
 ```
 
+Authentication inputs:
+- `github-token` - PAT or GitHub Actions token
+
 Query pull requests based on these inputs:
 - `branch`
 - `base`
@@ -38,6 +41,10 @@ For the first matching pull request, these outputs will be set:
 - `base-repo`
 - `state`
 - `author`
+
+Meta outputs:
+- `matching-pr-count` - the number of matching pull requests
+- `matching-pr-numbers` - JSON array of matching pull request numbers
 
 See [action.yml](action.yml) for more details.
 
