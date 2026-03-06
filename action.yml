@@ -37,7 +37,7 @@ inputs:
     default: 'desc'
     required: false
   labels:
-    description: 'A comma-seperated list of label names, all of which must be present for the PR to be returned'
+    description: 'A comma-separated list of label names, all of which must be present for the PR to be returned'
     required: false
 
 outputs:
@@ -61,6 +61,15 @@ outputs:
     description: The Pull Request's open or closed state if one was found
   author:
     description: The Pull Request's author if one was found
+  matching-pr-count:
+    description: The number of pull requests matching the search criteria
+  matching-pr-numbers:
+    description: |
+      A JSON string representing array of pull request numbers matching the search criteria. Could be used e.g.:
+      for pr_number in ${{ join(fromJSON(steps.find-pull-request.outputs.matching-pr-numbers), ' ') }}
+      do
+        echo pr_number
+      done
 
 runs:
   using: 'node20'
