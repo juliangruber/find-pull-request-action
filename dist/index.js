@@ -31089,7 +31089,7 @@ const main = async () => {
   }
 
   core.setOutput('matching-pr-count', prs.length)
-  core.setOutput('matching-pr-numbers', prs ? prs.map(pr => pr.number) : [])
+  core.setOutput('matching-pr-numbers', prs.map(pr => pr.number))
 
   const pr = prs.length && prs[0]
 
