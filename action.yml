@@ -68,5 +68,5 @@ outputs:
       A JSON string representing the array of pull request numbers matching the search criteria, e.g.: `[1,2,3]`
 
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
