@@ -40,11 +40,8 @@ inputs:
     description: 'A comma-separated list of label names, all of which must be present for the PR to be returned'
     required: false
   draft:
-    description: |
-      Filter to apply concerning draft PRs. False will exclude draft PRs, true will include draft PRs,
-      and null (default) will include all PRs.
+    description: 'The draft state of the Pull Request'
     required: false
-    default: 'null'
 
 outputs:
   number:

@@ -57,9 +57,8 @@ const main = async () => {
       return labelNames.every(label => prLabelNames.includes(label))
     })
   }
-  if (draft !== 'null') {
-    const draftValue = draft === 'true'
-    prs = prs.filter(pr => pr.draft === draftValue)
+  if (draft) {
+    prs = prs.filter(pr => pr.draft === Boolean(draft))
   }
 
   core.setOutput('matching-pr-count', prs.length)
