@@ -14,6 +14,8 @@ const main = async () => {
   const repoString = core.getInput('repo')
   const labels = core.getInput('labels')
   const draft = core.getInput('draft')
+    ? core.getBooleanInput('draft')
+    : undefined
 
   let repoObject
   if (repoString) {
@@ -57,8 +59,8 @@ const main = async () => {
       return labelNames.every(label => prLabelNames.includes(label))
     })
   }
-  if (draft) {
-    prs = prs.filter(pr => pr.draft === Boolean(draft))
+  if (draft !== undefined) {
+    prs = prs.filter(pr => pr.draft === draft)
   }
 
   core.setOutput('matching-pr-count', prs.length)
