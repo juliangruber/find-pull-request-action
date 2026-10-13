@@ -29,6 +29,7 @@ Query pull requests based on these inputs:
 - `sort`
 - `direction`
 - `labels`
+- `draft`
 
 For the first matching pull request, these outputs will be set:
 - `number`
@@ -41,6 +42,7 @@ For the first matching pull request, these outputs will be set:
 - `base-repo`
 - `state`
 - `author`
+- `draft`
 
 Meta outputs:
 - `matching-pr-count` - the number of matching pull requests

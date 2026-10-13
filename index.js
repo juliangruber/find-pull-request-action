@@ -13,6 +13,9 @@ const main = async () => {
   const direction = core.getInput('direction')
   const repoString = core.getInput('repo')
   const labels = core.getInput('labels')
+  const draft = core.getInput('draft')
+    ? core.getBooleanInput('draft')
+    : undefined
 
   let repoObject
   if (repoString) {
@@ -56,6 +59,9 @@ const main = async () => {
       return labelNames.every(label => prLabelNames.includes(label))
     })
   }
+  if (draft !== undefined) {
+    prs = prs.filter(pr => pr.draft === draft)
+  }
 
   core.setOutput('matching-pr-count', prs.length)
   core.setOutput('matching-pr-numbers', prs.map(pr => pr.number))
@@ -73,6 +79,7 @@ const main = async () => {
   core.setOutput('base-repo', pr ? pr.base.repo.full_name : '')
   core.setOutput('state', pr ? pr.state : '')
   core.setOutput('author', pr ? pr.user?.login : '')
+  core.setOutput('draft', pr ? pr.draft : '')
 }
 
 main().catch(err => core.setFailed(err.message))
